@@ -1,11 +1,12 @@
 body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #121212; /* Dark background */
     color: #E0E0E0; /* Off-white text */
 }
 
@@ -20,17 +21,17 @@ body {
 }
 
 .stars {
-    background: img src="stars.png" repeat;
+    background: url('stars/stars.png') repeat;
     animation: moveStars 200s linear infinite;
 }
 
 .twinkling {
-    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/twinkling.png') repeat;
+    background: url('stars/twinkling.png') repeat;
     animation: moveTwinkling 200s linear infinite;
 }
 
 .clouds {
-    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/clouds.png') repeat;
+    background: url('stars/clouds.png') repeat;
     animation: moveClouds 200s linear infinite;
 }
 
@@ -48,6 +49,7 @@ body {
     from { background-position: 0 0; }
     to { background-position: -10000px 0; }
 }
+
 .container {
     text-align: center;
     background-color: #1E1E1E; /* Dark gray background */
