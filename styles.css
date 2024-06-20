@@ -9,6 +9,45 @@ body {
     color: #E0E0E0; /* Off-white text */
 }
 
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: -1;
+}
+
+.stars {
+    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/stars.png') repeat;
+    animation: moveStars 200s linear infinite;
+}
+
+.twinkling {
+    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/twinkling.png') repeat;
+    animation: moveTwinkling 200s linear infinite;
+}
+
+.clouds {
+    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/clouds.png') repeat;
+    animation: moveClouds 200s linear infinite;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+@keyframes moveTwinkling {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+}
+
+@keyframes moveClouds {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 0; }
+}
 .container {
     text-align: center;
     background-color: #1E1E1E; /* Dark gray background */
