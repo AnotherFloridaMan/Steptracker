@@ -23,19 +23,19 @@ body {
 .stars {
     background: url('stars/stars.png') repeat;
     background-size: cover;
-    animation: moveStars 10s linear infinite;
+    animation: moveStars 4s linear infinite;
 }
 
 .twinkling {
     background: url('stars/twinkling.png') repeat;
     background-size: cover;
-    animation: moveTwinkling 15s linear infinite;
+    animation: moveTwinkling 3.5s linear infinite;
 }
 
 .clouds {
     background: url('stars/clouds.png') repeat;
     background-size: cover;
-    animation: moveClouds 20s linear infinite;
+    animation: moveClouds 4s linear infinite;
 }
 
 @keyframes moveStars {
