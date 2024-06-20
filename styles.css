@@ -22,20 +22,20 @@ body {
 
 .stars {
     background: url('stars/stars.png') repeat;
-    background-color: #111; /* Fallback color */
-    animation: moveStars 200s linear infinite;
+    background-size: cover;
+    animation: moveStars 200s linear infinite, zoomOut 5s ease-out forwards;
 }
 
 .twinkling {
     background: url('stars/twinkling.png') repeat;
-    background-color: #222; /* Fallback color */
-    animation: moveTwinkling 200s linear infinite;
+    background-size: cover;
+    animation: moveTwinkling 200s linear infinite, zoomOut 5s ease-out forwards;
 }
 
 .clouds {
     background: url('stars/clouds.png') repeat;
-    background-color: #333; /* Fallback color */
-    animation: moveClouds 200s linear infinite;
+    background-size: cover;
+    animation: moveClouds 200s linear infinite, zoomOut 5s ease-out forwards;
 }
 
 @keyframes moveStars {
@@ -51,6 +51,20 @@ body {
 @keyframes moveClouds {
     from { background-position: 0 0; }
     to { background-position: -10000px 0; }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .container {
