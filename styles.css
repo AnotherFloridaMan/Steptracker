@@ -18,24 +18,25 @@ body {
     bottom: 0;
     background: transparent;
     z-index: -1;
+    transform-origin: center;
 }
 
 .stars {
     background: url('stars/stars.png') repeat;
     background-size: cover;
-    animation: moveStars 200s linear infinite, zoomOut 5s ease-out forwards;
+    animation: moveStars 200s linear infinite, zoomOut 50s linear infinite;
 }
 
 .twinkling {
     background: url('stars/twinkling.png') repeat;
     background-size: cover;
-    animation: moveTwinkling 200s linear infinite, zoomOut 5s ease-out forwards;
+    animation: moveTwinkling 200s linear infinite, zoomOut 50s linear infinite;
 }
 
 .clouds {
     background: url('stars/clouds.png') repeat;
     background-size: cover;
-    animation: moveClouds 200s linear infinite, zoomOut 5s ease-out forwards;
+    animation: moveClouds 200s linear infinite, zoomOut 50s linear infinite;
 }
 
 @keyframes moveStars {
@@ -55,15 +56,10 @@ body {
 
 @keyframes zoomOut {
     0% {
-        transform: scale(0.1);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(10);
     }
 }
 
