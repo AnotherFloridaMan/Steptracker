@@ -23,7 +23,7 @@ body {
 .stars {
     background: url('stars/stars.png') repeat;
     background-size: cover;
-    animation: moveStars 4s linear infinite;
+    animation: moveStars 1s linear infinite;
 }
 
 .twinkling {
