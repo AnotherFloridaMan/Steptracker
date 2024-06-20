@@ -18,12 +18,14 @@ body {
     bottom: 0;
     background: transparent;
     z-index: -1;
+    perspective: 1000px;
+    overflow: hidden;
 }
 
 .stars {
     background: url('stars/stars.png') repeat;
     background-size: cover;
-    animation: moveStars 1s linear infinite;
+    animation: moveStars 4s linear infinite;
 }
 
 .twinkling {
@@ -39,18 +41,18 @@ body {
 }
 
 @keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 5000px; }
+    from { transform: translateZ(-2000px) scale(0.1); }
+    to { transform: translateZ(0) scale(1); }
 }
 
 @keyframes moveTwinkling {
-    from { background-position: 0 0; }
-    to { background-position: 10000px 5000px; }
+    from { transform: translateZ(-2000px) scale(0.1); }
+    to { transform: translateZ(0) scale(1); }
 }
 
 @keyframes moveClouds {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 0; }
+    from { transform: translateZ(-2000px) scale(0.1); }
+    to { transform: translateZ(0) scale(1); }
 }
 
 .container {
