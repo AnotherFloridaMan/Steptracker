@@ -25,7 +25,7 @@ body {
 .stars {
     background: url('stars/stars.png') repeat;
     background-size: cover;
-    animation: moveStars 15s linear infinite;
+    animation: moveStars 30s linear infinite;
 }
 
 .twinkling {
