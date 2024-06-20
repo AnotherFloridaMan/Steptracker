@@ -20,7 +20,7 @@ body {
 }
 
 .stars {
-    background: url('https://raw.githubusercontent.com/username/repo/branch/path/to/stars.png') repeat;
+    background: img src="stars.png" repeat;
     animation: moveStars 200s linear infinite;
 }
 
