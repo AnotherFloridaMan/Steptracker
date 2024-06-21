@@ -8,6 +8,15 @@ body {
     align-items: center;
     height: 100vh;
     color: #E0E0E0; /* Off-white text */
+    position: relative; /* Add relative position to body */
+}
+
+.flying-image {
+    position: absolute;
+    width: 50px; /* Size of a postage stamp */
+    height: 50px;
+    object-fit: cover;
+    z-index: -1; /* Ensure it stays in the background */
 }
 
 .container {
@@ -69,4 +78,3 @@ button {
 button:hover {
     background-color: #666; /* Lighter gray background */
 }
-
