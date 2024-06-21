@@ -4,6 +4,8 @@ let lastUpdateDate = new Date().toLocaleDateString('en-US', { timeZone: 'America
 
 document.addEventListener("DOMContentLoaded", function() {
     displayRandomTitleImage();
+    createFlyingImages();
+    setInterval(createFlyingImages, 3000); // Add new flying image every 3 seconds
 });
 
 function displayRandomTitleImage() {
@@ -23,6 +25,46 @@ function displayRandomTitleImage() {
     imgElement.src = randomImage;
     imgElement.alt = 'Title Image';
     titleImageContainer.appendChild(imgElement);
+}
+
+function createFlyingImages() {
+    const imagePaths = [
+        'random/image1.jpg',
+        'random/image2.jpg',
+        'random/image3.jpg',
+        'random/image4.jpg',
+        'random/image5.jpg'
+    ];
+
+    const randomIndex = Math.floor(Math.random() * imagePaths.length);
+    const randomImage = imagePaths[randomIndex];
+
+    const flyingImage = document.createElement('img');
+    flyingImage.src = randomImage;
+    flyingImage.className = 'flying-image';
+    document.body.appendChild(flyingImage);
+
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    const endX = Math.random() * window.innerWidth;
+    const endY = Math.random() * window.innerHeight;
+    const duration = Math.random() * 5 + 2; // 2 to 7 seconds
+
+    flyingImage.style.left = `${startX}px`;
+    flyingImage.style.top = `${startY}px`;
+
+    flyingImage.animate([
+        { transform: `translate(${endX - startX}px, ${endY - startY}px)` }
+    ], {
+        duration: duration * 1000,
+        easing: 'linear',
+        iterations: 1,
+        fill: 'forwards'
+    });
+
+    setTimeout(() => {
+        flyingImage.remove();
+    }, duration * 1000);
 }
 
 function submitSteps(personId) {
