@@ -60,6 +60,8 @@ function createFlyingImages() {
     flyingImage.className = 'flying-image';
     document.body.appendChild(flyingImage);
 
+    console.log(`Created flying image: ${randomImage}`); // Log image creation
+
     const startX = Math.random() * window.innerWidth;
     const startY = Math.random() * window.innerHeight;
     const endX = Math.random() * window.innerWidth;
