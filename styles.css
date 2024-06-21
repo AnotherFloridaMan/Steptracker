@@ -25,6 +25,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #title-image img {
@@ -38,6 +40,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    width: 100%;
 }
 
 .person {
@@ -77,4 +80,23 @@ button {
 
 button:hover {
     background-color: #666; /* Lighter gray background */
+}
+
+@media (max-width: 600px) {
+    .steps-form {
+        grid-template-columns: 1fr;
+    }
+
+    .person img {
+        width: 80px;
+        height: 80px;
+    }
+
+    input[type="number"] {
+        width: 70%;
+    }
+
+    button {
+        width: 70%;
+    }
 }
