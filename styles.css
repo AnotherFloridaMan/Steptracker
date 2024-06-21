@@ -6,27 +6,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     color: #E0E0E0; /* Off-white text */
     position: relative; /* Add relative position to body */
 }
 
 .flying-image {
     position: absolute;
-    width: 100px; /* Size of a postage stamp */
-    height: 100px;
+    width: 50px; /* Size of a postage stamp */
+    height: 50px;
     object-fit: cover;
     z-index: -1; /* Ensure it stays in the background */
 }
 
 .container {
     text-align: center;
-    background-color: #1E1E1E; /* Dark gray background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 #title-image img {
