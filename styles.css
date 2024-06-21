@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     color: #E0E0E0; /* Off-white text */
     position: relative; /* Add relative position to body */
 }
@@ -21,8 +21,12 @@ body {
 
 .container {
     text-align: center;
+    background-color: #1E1E1E; /* Dark gray background */
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #title-image img {
