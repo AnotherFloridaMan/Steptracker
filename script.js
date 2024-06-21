@@ -49,3 +49,10 @@ function resetDailySteps() {
     for (let i = 0; i < todaySteps.length; i++) {
         todaySteps[i] = 0;
         document.getElementById(`today${i + 1}`).textContent = '0';
+    }
+}
+
+function updateDisplay(personId) {
+    document.getElementById(`today${personId}`).textContent = todaySteps[personId - 1].toLocaleString();
+    document.getElementById(`total${personId}`).textContent = totalSteps[personId - 1].toLocaleString();
+}
