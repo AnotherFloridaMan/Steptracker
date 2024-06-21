@@ -13,8 +13,8 @@ body {
 
 .flying-image {
     position: absolute;
-    width: 50px; /* Size of a postage stamp */
-    height: 50px;
+    width: 100px; /* Size of a postage stamp */
+    height: 100px;
     object-fit: cover;
     z-index: -1; /* Ensure it stays in the background */
 }
