@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,7 +17,7 @@
                 <img src="david.jpg" alt="David">
                 <label for="steps1">David's Steps:</label>
                 <input type="number" id="steps1" placeholder="Enter steps here">
-                <button onclick="submitSteps(1)">Submit</button>
+                <button onclick="submitSteps(1, 'David')">Submit</button>
                 <p>Today's steps: <span id="today1">0</span></p>
                 <p>Total steps: <span id="total1">0</span></p>
             </div>
@@ -22,7 +25,7 @@
                 <img src="joe.jpg" alt="Joe">
                 <label for="steps2">Joe's Steps:</label>
                 <input type="number" id="steps2" placeholder="Enter steps here">
-                <button onclick="submitSteps(2)">Submit</button>
+                <button onclick="submitSteps(2, 'Joe')">Submit</button>
                 <p>Today's steps: <span id="today2">0</span></p>
                 <p>Total steps: <span id="total2">0</span></p>
             </div>
@@ -30,7 +33,7 @@
                 <img src="lili.jpg" alt="Lili">
                 <label for="steps3">Lili's Steps:</label>
                 <input type="number" id="steps3" placeholder="Enter steps here">
-                <button onclick="submitSteps(3)">Submit</button>
+                <button onclick="submitSteps(3, 'Lili')">Submit</button>
                 <p>Today's steps: <span id="today3">0</span></p>
                 <p>Total steps: <span id="total3">0</span></p>
             </div>
@@ -38,7 +41,7 @@
                 <img src="jenn.jpg" alt="Jenn">
                 <label for="steps4">Jenn's Steps:</label>
                 <input type="number" id="steps4" placeholder="Enter steps here">
-                <button onclick="submitSteps(4)">Submit</button>
+                <button onclick="submitSteps(4, 'Jenn')">Submit</button>
                 <p>Today's steps: <span id="today4">0</span></p>
                 <p>Total steps: <span id="total4">0</span></p>
             </div>
@@ -46,7 +49,7 @@
                 <img src="jordyn.jpg" alt="Jordyn">
                 <label for="steps5">Jordyn's Steps:</label>
                 <input type="number" id="steps5" placeholder="Enter steps here">
-                <button onclick="submitSteps(5)">Submit</button>
+                <button onclick="submitSteps(5, 'Jordyn')">Submit</button>
                 <p>Today's steps: <span id="today5">0</span></p>
                 <p>Total steps: <span id="total5">0</span></p>
             </div>
