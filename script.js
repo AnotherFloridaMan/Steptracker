@@ -1,12 +1,12 @@
-// Replace with your Firebase configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    databaseURL: "your-database-url",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-messaging-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyBaRdXq_QfLnRw6gbNFwHf5t02ztPbA0ME",
+  authDomain: "stepsdatabase.firebaseapp.com",
+  databaseURL: "https://stepsdatabase-default-rtdb.firebaseio.com",
+  projectId: "stepsdatabase",
+  storageBucket: "stepsdatabase.appspot.com",
+  messagingSenderId: "400313891338",
+  appId: "1:400313891338:web:4d2b9da9c9e7ee3be8fdf3"
 };
 
 // Initialize Firebase
