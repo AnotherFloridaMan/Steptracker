@@ -4,11 +4,11 @@ body {
     background: #000;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
     color: #E0E0E0; /* Off-white text */
     position: relative; /* Add relative position to body */
+    min-height: 100vh;
 }
 
 .flying-image {
@@ -21,39 +21,41 @@ body {
 
 .container {
     text-align: center;
-    background-color: #1E1E1E; /* Dark gray background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    max-width: 100%;
-    box-sizing: border-box;
+}
+
+#title-image {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #title-image img {
-    width: 40%; /* 60% smaller than full width */
-    max-width: 200px; /* Adjust the max width as needed */
+    width: 60%; /* Adjust width as needed */
+    max-width: 400px; /* Adjust max width as needed */
     height: auto;
-    margin-bottom: 20px;
 }
 
 .steps-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
+    max-width: 800px;
 }
 
 .person {
     border: 1px solid #333; /* Dark gray border */
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 10px;
     background-color: #2C2C2C; /* Light gray background */
     position: relative;
+    text-align: center;
 }
 
 .person img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
@@ -61,21 +63,22 @@ body {
 
 input[type="number"] {
     width: 80%;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #444; /* Dark gray border */
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: #333; /* Dark gray background */
     color: #E0E0E0; /* Off-white text */
     margin-bottom: 10px;
 }
 
 button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: #555; /* Medium gray background */
     color: #E0E0E0; /* Off-white text */
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 button:hover {
@@ -88,15 +91,15 @@ button:hover {
     }
 
     .person img {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
     }
 
     input[type="number"] {
-        width: 70%;
+        width: 100%;
     }
 
     button {
-        width: 70%;
+        width: 100%;
     }
 }
