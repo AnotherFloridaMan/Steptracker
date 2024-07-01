@@ -2,17 +2,15 @@
 const firebaseConfig = {
   apiKey: "AIzaSyBaRdXq_QfLnRw6gbNFwHf5t02ztPbA0ME",
   authDomain: "stepsdatabase.firebaseapp.com",
-  databaseURL: "https://stepsdatabase-default-rtdb.firebaseio.com",
   projectId: "stepsdatabase",
   storageBucket: "stepsdatabase.appspot.com",
   messagingSenderId: "400313891338",
   appId: "1:400313891338:web:4d2b9da9c9e7ee3be8fdf3"
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 const db = firebase.database();
+
 
 const totalSteps = [0, 0, 0, 0, 0];
 const lastEntrySteps = [0, 0, 0, 0, 0];
