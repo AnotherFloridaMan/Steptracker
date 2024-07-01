@@ -1,11 +1,12 @@
-// Your web app's Firebase configuration
+// Replace with your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBaRdXq_QfLnRw6gbNFwHf5t02ztPbA0ME",
-  authDomain: "stepsdatabase.firebaseapp.com",
-  projectId: "stepsdatabase",
-  storageBucket: "stepsdatabase.appspot.com",
-  messagingSenderId: "400313891338",
-  appId: "1:400313891338:web:4d2b9da9c9e7ee3be8fdf3"
+    apiKey: "your-api-key",
+    authDomain: "your-auth-domain",
+    databaseURL: "your-database-url",
+    projectId: "your-project-id",
+    storageBucket: "your-storage-bucket",
+    messagingSenderId: "your-messaging-sender-id",
+    appId: "your-app-id"
 };
 
 // Initialize Firebase
@@ -14,8 +15,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 const totalSteps = [0, 0, 0, 0, 0];
-const todaySteps = [0, 0, 0, 0, 0];
-let lastUpdateDate = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+const lastEntrySteps = [0, 0, 0, 0, 0];
+const lastEntryDate = ["N/A", "N/A", "N/A", "N/A", "N/A"];
 
 document.addEventListener("DOMContentLoaded", function() {
     displayRandomTitleImage();
@@ -60,8 +61,6 @@ function createFlyingImages() {
     flyingImage.className = 'flying-image';
     document.body.appendChild(flyingImage);
 
-    console.log(`Created flying image: ${randomImage}`); // Log image creation
-
     const startX = Math.random() * window.innerWidth;
     const startY = Math.random() * window.innerHeight;
     const endX = Math.random() * window.innerWidth;
@@ -91,38 +90,25 @@ function submitSteps(personId, personName) {
 
     const currentDate = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York' });
 
-    if (currentDate !== lastUpdateDate) {
-        resetDailySteps();
-        lastUpdateDate = currentDate;
-    }
+    lastEntrySteps[personId - 1] = parseInt(stepsInput);
+    lastEntryDate[personId - 1] = currentDate;
+    totalSteps[personId - 1] += parseInt(stepsInput);
 
-    if (todaySteps[personId - 1] === 0) {
-        todaySteps[personId - 1] = parseInt(stepsInput);
-        totalSteps[personId - 1] += parseInt(stepsInput);
-        updateDisplay(personId);
-        saveStepsToDatabase(personName, todaySteps[personId - 1], totalSteps[personId - 1]);
-    } else {
-        alert('You can only enter steps once a day.');
-    }
-}
-
-function resetDailySteps() {
-    for (let i = 0; i < todaySteps.length; i++) {
-        todaySteps[i] = 0;
-        document.getElementById(`today${i + 1}`).textContent = '0';
-    }
+    updateDisplay(personId);
+    saveStepsToDatabase(personName, lastEntrySteps[personId - 1], totalSteps[personId - 1], lastEntryDate[personId - 1]);
 }
 
 function updateDisplay(personId) {
-    document.getElementById(`today${personId}`).textContent = todaySteps[personId - 1].toLocaleString();
+    document.getElementById(`date${personId}`).textContent = lastEntryDate[personId - 1];
+    document.getElementById(`steps${personId}-display`).textContent = lastEntrySteps[personId - 1].toLocaleString();
     document.getElementById(`total${personId}`).textContent = totalSteps[personId - 1].toLocaleString();
 }
 
-function saveStepsToDatabase(personName, todaySteps, totalSteps) {
+function saveStepsToDatabase(personName, lastSteps, totalSteps, lastDate) {
     db.ref('steps/' + personName).set({
-        todaySteps: todaySteps,
+        lastEntrySteps: lastSteps,
         totalSteps: totalSteps,
-        date: lastUpdateDate
+        lastEntryDate: lastDate
     });
 }
 
@@ -134,10 +120,9 @@ function loadSteps() {
             const personId = getPersonId(personName);
 
             if (personId !== -1) {
-                if (data.date === lastUpdateDate) {
-                    todaySteps[personId - 1] = data.todaySteps;
-                }
-                totalSteps[personId - 1] = data.totalSteps;
+                lastEntrySteps[personId - 1] = data.lastEntrySteps || 0;
+                totalSteps[personId - 1] = data.totalSteps || 0;
+                lastEntryDate[personId - 1] = data.lastEntryDate || "N/A";
                 updateDisplay(personId);
             }
         });
